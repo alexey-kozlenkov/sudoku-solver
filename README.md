@@ -1,19 +1,19 @@
 # sudoku-solver
 This should be simple console Sudoku solver. In development now.
 
-### Implemented features:
+## Implemented features:
 + Field pretty printing.
 + Checking for correctness.
 + Solving simple (when there is only 1 unknown cell in column, row or square) cells.
 
-### TODO:
+## TODO:
 + Solving unobvious situations using tree-solution.
 + Examples
 
-### Dependencies:
+## Dependencies:
 1. [numpy](http://www.numpy.org/)
 
-### Usage:
+## Usage:
 You should create your field 9x9 size with zeros instead of unknown elements.
 Then import sudoku class, create instance and set your field like this:
 
