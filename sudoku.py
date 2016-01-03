@@ -35,7 +35,7 @@ class Sudoku:
     def _check_lines(self):
         differences = {}
         for i in range(9):
-            diff = np.setdiff1d(self.field[i], self._CORRECT_LINE)
+            diff = np.setdiff1d(self._CORRECT_LINE, self.field[i])
             if diff.size:
                 differences[(i, -1)] = diff
         return differences
@@ -44,7 +44,7 @@ class Sudoku:
         transposed_field = self.field.transpose()
         differences = {}
         for i in range(9):
-            diff = np.setdiff1d(transposed_field[i], self._CORRECT_LINE)
+            diff = np.setdiff1d(self._CORRECT_LINE, transposed_field[i])
             if diff.size:
                 differences[(-1, i)] = diff
         return differences
@@ -54,7 +54,7 @@ class Sudoku:
         for k in range(i, i + 3):
             for l in range(j, j + 3):
                 square.append(self.field[k][l])
-        return np.setdiff1d(square, self._CORRECT_LINE)
+        return np.setdiff1d(self._CORRECT_LINE, square)
 
     def _check_squares(self):
         differences = {}
