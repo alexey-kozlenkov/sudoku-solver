@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import numpy as np
 
 
@@ -14,13 +13,13 @@ class Sudoku:
     def print_field(self):
         for i in range(9):
             if i % 3 == 0:
-                print '-' * 37
+                print('-' * 37)
             for j in range(9):
                 if j % 3 == 0:
-                    print '| ',
-                print str(self.field[i][j]) + ' ',
-            print '|'
-        print '-' * 37
+                    print('| ', end=' ')
+                print(str(self.field[i][j]) + ' ', end=' ')
+            print('|')
+        print('-' * 37)
 
     def is_correct(self):
         return not len(self.get_differences())

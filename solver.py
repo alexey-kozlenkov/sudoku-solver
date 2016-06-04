@@ -4,7 +4,7 @@ import numpy as np
 def solve(sudoku):
     simple_cell = _get_simple_cell(sudoku)
     while simple_cell:
-        print '\t\tSolving simpel cell: ' + str(simple_cell)
+        print('\t\tSolving simple cell: {}'.format(simple_cell))
         _solve_simple_cells(sudoku, simple_cell)
         simple_cell = _get_simple_cell(sudoku)
 
@@ -27,10 +27,8 @@ def _solve_simple_cells(sudoku, simple_cell):
 
 def _get_simple_cell(sudoku):
     differences = sudoku.get_differences()
-    print '\t\tGot differences: ' + str(differences)
-    simple_differences_indexes = \
-        filter(lambda i: len(differences[i]) == 1, differences)
+    print('\t\tGot differences: {}'.format(differences))
+    simple_differences_indexes = [i for i in differences if len(differences[i]) == 1]
     if simple_differences_indexes:
-        return (simple_differences_indexes[0],
-                differences[simple_differences_indexes[0]][0])
+        return simple_differences_indexes[0], differences[simple_differences_indexes[0]][0]
     return None
