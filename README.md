@@ -11,7 +11,7 @@ This should be simple console Sudoku solver. In development now.
 + Examples
 
 ## Dependencies:
-1. [numpy](http://www.numpy.org/)
+1. [python3.5](https://www.python.org/downloads/release/python-350/) required
 
 ## Usage:
 You should create your field 9x9 size with zeros instead of unknown elements.
